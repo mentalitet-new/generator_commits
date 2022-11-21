@@ -18,7 +18,10 @@ class Generator(QMainWindow, Ui_MainWindow):
         value_dt = datetime.datetime.now()
         variable = value_dt.strftime("%d/%m/%y %H:%M:%S") + "_" + str(random.randint(100, 1000))
         clipboard.copy(f"{variable}")
-        self.lineEdit.setText(variable)
+        self.lineEdit.setText(f'{variable} {self.add_text_in_commit()}')
+
+    def add_text_in_commit(self):
+        return self.lineEdit_2.text()
 
 
 if __name__ == '__main__':
