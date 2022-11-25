@@ -16,7 +16,7 @@ class Generator(QMainWindow, Ui_MainWindow):
 
     def gen_comm(self):
         value_dt = datetime.datetime.now()
-        variable = value_dt.strftime("%d/%m/%y %H:%M:%S") + "_" + str(random.randint(100, 1000))
+        variable = value_dt.strftime("%d-%m-%y %H:%M:%S") + "_" + str(random.randint(100, 1000))
         self.lineEdit.setText(f'{variable} {self.add_text_in_commit()}')
         clipboard.copy(f"{variable} {self.add_text_in_commit()}")
 
